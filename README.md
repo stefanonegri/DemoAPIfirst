@@ -46,3 +46,8 @@ select EmployeeNumber, FirstName, LastName, Email, Salary from Employees where E
 ```
 http://localhost:8290/services/EmployeeDS?swagger.json
 ```
+- Test the services (they are accessible as REST but without restrictions/security):
+```
+curl --request GET 'http://localhost:8290/services/EmployeeDS/employee'
+curl --request GET 'http://localhost:8290/services/EmployeeDS/employee/1
+```
