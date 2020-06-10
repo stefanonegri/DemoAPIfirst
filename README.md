@@ -51,3 +51,13 @@ http://localhost:8290/services/EmployeeDS?swagger.json
 curl --request GET 'http://localhost:8290/services/EmployeeDS/employee'
 curl --request GET 'http://localhost:8290/services/EmployeeDS/employee/1
 ```
+#### Create the corresponding API in the API Manager and apply policies
+- Open the publisher and create a new API using as source the swagger endpoint of the Datasource (see above)
+- as endpoint use: EP: http://localhost:8290/services/EmployeeDS
+- define security and throttling policy
+- publish the API
+- Open the Dev Portal, show the API just created, subscribe with any application
+- run the API using a token; show the xml to json transformation
+```
+curl -X GET "http://localhost:8280/Employees/1.0/Employee/3" -H "accept: application/json" -H "Authorization: Bearer *token*"
+```
