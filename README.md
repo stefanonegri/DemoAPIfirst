@@ -16,11 +16,14 @@ This case is suitable when a company has a set of digital assets that he wants t
 ### Database
 1. Create schema Employees
 2. Create a table Employees (using the following script: [(createEmployeesTable.sql)](createEmployeesTable.sql)
-3. Add recored to the table (for example using: )
+3. Add records to the table (for example using: [(insertEmployee.sql)](insertEmployee.sql))
+### WSO2 Enterprise Integrator
+- start WSO2 EI with port offset 10
+
 
 
 
 ## Description of the demo
 ### Bottom up
-
+#### Create a new datasource
 
