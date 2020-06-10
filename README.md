@@ -1,6 +1,6 @@
 # Demo API first integration
 ## Intro
-The demo aims to cover the 2 possible approach for API first integration: 1) bottom up and 2) top down
+The demo aims to cover the 2 possible approaches for API first integration: 1) bottom up and 2) top down
 ### Bottom up
 This case is suitable when a company has a set of digital assets that he wants to make available as managed APIs; it includes 2 steps:
 1. The first step transforms the asset (a database table in this sample) in an REST API
@@ -11,6 +11,12 @@ This case is suitable when a company has a set of digital assets that he wants t
 ## Pre requisites
 1. Database MySql
 2. Salesforce account
+
+## Set up of the env.
+### Database
+1. create a table Employees (use the follwoing script) and add some records
+
+
 
 ## Description of the demo
 ### Bottom up
