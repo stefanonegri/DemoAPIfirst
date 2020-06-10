@@ -19,11 +19,30 @@ This case is suitable when a company has a set of digital assets that he wants t
 3. Add records to the table (for example using: [(insertEmployee.sql)](insertEmployee.sql))
 ### WSO2 Enterprise Integrator
 - start WSO2 EI with port offset 10
-
+```
+./integrator.sh -DportOffset=10
+```
+- start WSO2 API Manager
 
 
 
 ## Description of the demo
 ### Bottom up
 #### Create a new datasource
-
+- Datasource name: *EmployeeDS*, Datasource Type: *Database*, Database Engine: *MySQL*, Driver class: *com.mysql.jdbc.Driver*, URL: *jdbc:mysql://localhost:3306/Employees* (replace hostname and port accordingly)
+- Add 2 queries:
+ 1. employees
+```
+select EmployeeNumber, FirstName, LastName, Email, Salary from Employees
+```
+ 2. employeeById
+```
+select EmployeeNumber, FirstName, LastName, Email, Salary from Employees where EmployeeNumber=:EmployeeNumber
+```
+- Add 2 resources:
+1. resource path: *employee*, resource method: *GET*, query ID: *employees*
+2. resource path: *employee/{EmployeeNumber}*, resource method: *GET*, query ID: *employeeById*
+- Save the DS; show it in the Deployed Services and show the swagger generated url: 
+```
+http://localhost:8290/services/EmployeeDS?swagger.json
+```
