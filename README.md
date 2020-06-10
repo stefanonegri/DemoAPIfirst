@@ -14,7 +14,9 @@ This case is suitable when a company has a set of digital assets that he wants t
 
 ## Set up of the env.
 ### Database
-1. create a table Employees (use the follwoing script) and add some records
+1. Create schema Employees
+2. Create a table Employees (using the following script: [(createEmployeesTable.sql)](createEmployeesTable.sql)
+3. Add recored to the table (for example using: )
 
 
 
