@@ -1,0 +1,70 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Customer API",
+    "title": "customer",
+    "version": "v1"
+  },
+  "host": "localhost:8080",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "basePath": "/Customers",
+  "paths": {
+    "/customer": {
+      "get": {
+        "summary": "Get list of customers",
+        "responses": {
+          "200": {
+            "description": "Success response"
+          }
+        }
+      },
+      "post": {
+        "summary": "add new cutomer",
+        "responses": {
+          "200": {
+            "description": "Success response"
+          }
+        }
+      }
+    },
+    "/customer/{customerId}": {
+      "get": {
+        "summary": "Get customer details",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "ID of customer to return",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update customer details",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "ID of customer to update",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response"
+          }
+        }
+      }
+    }
+  }
+}
