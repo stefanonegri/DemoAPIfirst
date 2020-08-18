@@ -8,6 +8,11 @@ This case is suitable when a company has a set of digital assets that he wants t
 
 ![bottom up](bottom-up.png)
 
+### Top Down
+This case is applicable when new APIs must be created, starting from services or data that are spread over the corporate assets. In this case (step1) an (API) Designer or Analyst creates the API definition and stores it in a repository in a standard format like openAPI. Later (step 2), at the same time, the API definition can be used to complete the API policy definition (in the API Manager), the integration part, and the testing part.
+
+![top down](topdown.png)
+
 ## Pre requisites
 1. Database MySql
 2. Salesforce account
