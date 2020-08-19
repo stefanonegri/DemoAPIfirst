@@ -11,7 +11,7 @@ This case is suitable when a company has a set of digital assets that he wants t
 ### Top Down
 This case is applicable when new APIs must be created, starting from services or data that are spread over the corporate assets. In this case (step1) an (API) Designer or Analyst creates the API definition and stores it in a repository in a standard format like openAPI. Later (step 2), at the same time, the API definition can be used to complete the API policy definition (in the API Manager), the integration part, and the testing part.
 
-![top down](topdown.png)
+![top down](TopDown.png)
 
 ## Pre requisites
 1. Database MySql
@@ -67,4 +67,26 @@ curl --request GET 'http://localhost:8290/services/EmployeeDS/employee/1
 curl -X GET "http://localhost:8280/Employees/1.0/Employee/3" -H "accept: application/json" -H "Authorization: Bearer *token*"
 ```
 ### Top Down
-Show the source swagger file [(Account.json)](Account.json))
+1. Show the source swagger file [(Account.json)](Account.json))
+2. Import the API definition in the API Maager; do not specify at this point neither the enpoint nor the subscription tier.
+3. Go to the Endpoint and choose Prototype - Prototype implementation; for the GET /customer resource apply the following js code:
+```
+var response200json = {
+            "Id": "0011t000005QvqtAAC",
+            "AccountNumber": "CC978213",
+            "Name": "GenePoint",
+            "Phone": "(650) 867-3450",
+            "BillingAddress": {
+                "city": "Mountain View",
+                "country": null,
+                "geocodeAccuracy": null,
+                "latitude": null,
+                "longitude": null,
+                "postalCode": null,
+                "state": "CA",
+                "street": "345 Shoreline Park, Mountain View, CA 94043 USA"
+            }
+}
+mc.setProperty('CONTENT_TYPE', 'application/json');
+mc.setPayloadJSON(response200json);
+```
