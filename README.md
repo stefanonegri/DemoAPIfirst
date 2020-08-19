@@ -22,14 +22,16 @@ This case is applicable when new APIs must be created, starting from services or
 1. Create schema Employees
 2. Create a table Employees (using the following script: [(createEmployeesTable.sql)](createEmployeesTable.sql)
 3. Add records to the table (for example using: [(insertEmployee.sql)](insertEmployee.sql))
-### WSO2 Enterprise Integrator
+4. Create schema Accounts
+5. Create table Accounts (using following script: )
+6. Add records to the table (use this script, adapt the account is according to what in SF:)
+7. Create Accounts in SF
+### WSO2 Enterprise Integrator and API Manager
 - start WSO2 EI with port offset 10
 ```
 ./integrator.sh -DportOffset=10
 ```
 - start WSO2 API Manager
-
-
 
 ## Description of the demo
 ### Bottom up
@@ -67,6 +69,7 @@ curl --request GET 'http://localhost:8290/services/EmployeeDS/employee/1
 curl -X GET "http://localhost:8280/Employees/1.0/Employee/3" -H "accept: application/json" -H "Authorization: Bearer *token*"
 ```
 ### Top Down
+#### Import the API swagger definition in the API Manager
 1. Show the source swagger file [(Account.json)](Account.json))
 2. Import the API definition in the API Maager; do not specify at this point neither the enpoint nor the subscription tier.
 3. Go to the Endpoint and choose Prototype - Prototype implementation; for the GET /customer resource apply the following js code:
@@ -90,3 +93,5 @@ var response200json = {
 mc.setProperty('CONTENT_TYPE', 'application/json');
 mc.setPayloadJSON(response200json);
 ```
+then publish the API as prototype
+4. Move to the Dev Portal, show the  new API displayed, labbeled as prototype. Try it via the UI or any other tool.
