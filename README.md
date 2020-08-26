@@ -20,11 +20,11 @@ This case is applicable when new APIs must be created, starting from services or
 ## Set up of the env.
 ### Database
 1. Create schema Employees
-2. Create a table Employees (using the following script: [(createEmployeesTable.sql)](createEmployeesTable.sql)
+2. Create a table Employees (using the following script: [(createEmployeesTable.sql)](createEmployeesTable.sql))
 3. Add records to the table (for example using: [(insertEmployee.sql)](insertEmployee.sql))
 4. Create schema Accounts
-5. Create table Accounts (using following script: )
-6. Add records to the table (use this script, adapt the account is according to what in SF:)
+5. Create table Accounts (using following script: [(createAccounts.sql)](createAccounts.sql))
+6. Add records to the table (use this script, adapt the account is according to what in SF:[(insertAccounts.sql)](insertAccounts.sql))
 7. Create Accounts in SF
 ### WSO2 Enterprise Integrator and API Manager
 - start WSO2 EI with port offset 10
